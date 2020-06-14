@@ -1,0 +1,41 @@
+package com.bagus.appdatabaseku.databaseku;
+
+import android.content.Context;
+import android.database.sqlite.SQLiteDatabase;
+import android.database.sqlite.SQLiteOpenHelper;
+
+import androidx.annotation.Nullable;
+
+public class MyDatabaseKu extends SQLiteOpenHelper {
+
+    //DATABASE NAME AND DATABASE VERSI
+    static String DATABASE_NAME = "appdatabaseku";
+    static int DATABASE_VERSI = 1;
+
+    //DATABASE TABLE AND FIELD
+    static String DATABASE_TABLE = "table_app";
+    static String DB_ID = "app_id";
+    static String DB_NAME = "app_name";
+    static String DB_ALAMAT = "app_alamat";
+    static String DB_PEKERJAAN = "app_pekerjaan";
+
+    static String CREATE_TABLE = "CREATE TABLE " + DATABASE_TABLE + "(" + DB_ID + "INTEGER PRIMARY KEY, "
+            + DB_NAME + "TEXT, "
+            + DB_ALAMAT + "TEXT, "
+            + DB_PEKERJAAN + "TEXT)";
+
+
+    public MyDatabaseKu(@Nullable Context context) {
+        super(context,DATABASE_NAME,null,DATABASE_VERSI);
+    }
+
+    @Override
+    public void onCreate(SQLiteDatabase db) {
+        db.execSQL(CREATE_TABLE);
+    }
+
+    @Override
+    public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
+    onCreate(db);
+    }
+}
