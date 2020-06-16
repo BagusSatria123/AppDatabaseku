@@ -2,12 +2,16 @@ package com.bagus.appdatabaseku.databaseku;
 
 import android.content.ContentValues;
 import android.content.Context;
+import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
 import androidx.annotation.Nullable;
 
 import com.bagus.appdatabaseku.modal.ModalKu;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class MyDatabaseKu extends SQLiteOpenHelper {
 
@@ -41,6 +45,7 @@ public class MyDatabaseKu extends SQLiteOpenHelper {
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
     onCreate(db);
     }
+
     public void tambahData(ModalKu modalKu){
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues contentValues = new ContentValues();
@@ -51,5 +56,28 @@ public class MyDatabaseKu extends SQLiteOpenHelper {
 
 
         db.insert(DATABASE_TABLE,null,contentValues);
+    }
+
+    public List<ModalKu> tampilkanSemuaUser(){
+        SQLiteDatabase db = this.getWritableDatabase();
+
+        Cursor cursor = db.query(DATABASE_TABLE, new String[]{DB_NAME,DB_ALAMAT,DB_PEKERJAAN},null,null,null,null,DB_ID + "desc");
+
+        List<ModalKu> arrayListku = new ArrayList<>();
+
+        if(cursor.moveToFirst()){
+            do{
+                ModalKu modalKu = new ModalKu();
+
+                modalKu.setName(cursor.getString(cursor.getColumnIndex(DB_NAME)));
+                modalKu.setAlamat(cursor.getString(cursor.getColumnIndex(DB_ALAMAT)));
+                modalKu.setPekerjaan(cursor.getString(cursor.getColumnIndex(DB_PEKERJAAN)));
+
+                arrayListku.add(modalKu);
+
+            }while (cursor.moveToNext());
+        }
+        cursor.close();
+        return arrayListku;
     }
 }
