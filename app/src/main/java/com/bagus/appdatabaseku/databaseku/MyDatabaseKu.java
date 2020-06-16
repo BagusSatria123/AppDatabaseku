@@ -1,10 +1,13 @@
 package com.bagus.appdatabaseku.databaseku;
 
+import android.content.ContentValues;
 import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
 import androidx.annotation.Nullable;
+
+import com.bagus.appdatabaseku.modal.ModalKu;
 
 public class MyDatabaseKu extends SQLiteOpenHelper {
 
@@ -37,5 +40,16 @@ public class MyDatabaseKu extends SQLiteOpenHelper {
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
     onCreate(db);
+    }
+    public void tambahData(ModalKu modalKu){
+        SQLiteDatabase db = this.getWritableDatabase();
+        ContentValues contentValues = new ContentValues();
+
+        contentValues.put(DB_NAME,modalKu.getName());
+        contentValues.put(DB_ALAMAT,modalKu.getAlamat());
+        contentValues.put(DB_PEKERJAAN,modalKu.getPekerjaan());
+
+
+        db.insert(DATABASE_TABLE,null,contentValues);
     }
 }
