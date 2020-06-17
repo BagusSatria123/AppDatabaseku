@@ -94,6 +94,35 @@
                 android:text="TAMBAH DATA"
                 android:textSize="20dp"
                 android:textColor="#F2F7F8"/>
+
+            <LinearLayout
+                android:layout_margin="10dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:weightSum="90">
+                
+                <TextView
+                    android:textSize="18dp"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="30"
+                    android:text="Nama : "/>
+                <TextView
+                    android:layout_width="0dp"
+                    android:textSize="18dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="30"
+                    android:text="Alamat : "/>
+                <TextView
+                    android:layout_width="0dp"
+                    android:textSize="18dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="30"
+                    android:text="Pekerjaan : "/>
+
+            </LinearLayout>
+
         </LinearLayout>
 
         <androidx.recyclerview.widget.RecyclerView
