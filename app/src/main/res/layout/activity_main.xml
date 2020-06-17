@@ -107,19 +107,19 @@
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_weight="30"
-                    android:text="Nama : "/>
+                    android:text="Nama  "/>
                 <TextView
                     android:layout_width="0dp"
                     android:textSize="18dp"
                     android:layout_height="match_parent"
                     android:layout_weight="30"
-                    android:text="Alamat : "/>
+                    android:text="Alamat  "/>
                 <TextView
                     android:layout_width="0dp"
                     android:textSize="18dp"
                     android:layout_height="match_parent"
                     android:layout_weight="30"
-                    android:text="Pekerjaan : "/>
+                    android:text="Pekerjaan  "/>
 
             </LinearLayout>
 
