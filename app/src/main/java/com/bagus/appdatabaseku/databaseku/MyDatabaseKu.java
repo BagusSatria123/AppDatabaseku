@@ -26,7 +26,7 @@ public class MyDatabaseKu extends SQLiteOpenHelper {
     static String DB_ALAMAT = "app_alamat";
     static String DB_PEKERJAAN = "app_pekerjaan";
 
-    static String CREATE_TABLE = "CREATE TABLE " + DATABASE_TABLE + "(" + DB_ID + "INTEGER PRIMARY KEY, "
+    static String CREATE_TABLE = "CREATE TABLE " + DATABASE_TABLE + "(" + DB_ID + " INTEGER PRIMARY KEY, "
             + DB_NAME + "TEXT, "
             + DB_ALAMAT + "TEXT, "
             + DB_PEKERJAAN + "TEXT)";
