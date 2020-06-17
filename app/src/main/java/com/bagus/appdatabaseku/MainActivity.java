@@ -4,7 +4,9 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.os.Handler;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -55,6 +57,14 @@ public class MainActivity extends AppCompatActivity {
 
                 dbku.tambahData(new ModalKu(namaString,alamatString,pekerjaanString));
                 Toast.makeText(getApplicationContext(),"DATA BERHASIL DI TAMBAH",Toast.LENGTH_LONG).show();
+
+                new Handler().postDelayed(new Runnable() {
+                    @Override
+                    public void run() {
+                        Intent intent = new Intent(MainActivity.this,MainActivity.class);
+                        startActivity(intent);
+                    }
+                },2000);
 
             }
         });
