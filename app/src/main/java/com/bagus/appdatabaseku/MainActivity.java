@@ -74,5 +74,9 @@ public class MainActivity extends AppCompatActivity {
 
             modalListAll.add(listKu);
         }
+
+        adapterKu = new AdapterKu(this,modalListAll);
+        recycler_view.setAdapter(adapterKu);
+        adapterKu.notifyDataSetChanged();
     }
 }
