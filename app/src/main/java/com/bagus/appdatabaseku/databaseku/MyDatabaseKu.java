@@ -62,7 +62,7 @@ public class MyDatabaseKu extends SQLiteOpenHelper {
     public List<ModalKu> tampilkanSemuaUser(){
         SQLiteDatabase db = this.getWritableDatabase();
 
-        Cursor cursor = db.query(DATABASE_TABLE, new String[]{DB_NAME,DB_ALAMAT,DB_PEKERJAAN},null,null,null,null,DB_ID + "desc");
+        Cursor cursor = db.query(DATABASE_TABLE , new String[]{DB_NAME,DB_ALAMAT,DB_PEKERJAAN},null,null,null,null,DB_ID + " desc ");
 
         List<ModalKu> arrayListku = new ArrayList<>();
 
