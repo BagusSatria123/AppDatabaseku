@@ -5,8 +5,10 @@ import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.os.Bundle;
+import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import com.bagus.appdatabaseku.adapter.AdapterKu;
 import com.bagus.appdatabaseku.databaseku.MyDatabaseKu;
@@ -41,5 +43,19 @@ public class MainActivity extends AppCompatActivity {
 
         tambah = findViewById(R.id.tambah);
         recycler_view = findViewById(R.id.recycler_view);
+
+        tambah.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                namaString = name.getText().toString();
+                alamatString = alamat.getText().toString();
+                pekerjaanString = pekerjaan.getText().toString();
+
+                dbku.tambahData(new ModalKu(namaString,alamatString,pekerjaanString));
+                Toast.makeText(getApplicationContext(),"DATA BERHASIL DI TAMBAH",Toast.LENGTH_LONG).show();
+
+            }
+        });
     }
 }
