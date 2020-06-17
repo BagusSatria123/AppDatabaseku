@@ -34,6 +34,7 @@ public class MyDatabaseKu extends SQLiteOpenHelper {
 
     public MyDatabaseKu(@Nullable Context context) {
         super(context,DATABASE_NAME,null,DATABASE_VERSI);
+        this.getWritableDatabase();
     }
 
     @Override
