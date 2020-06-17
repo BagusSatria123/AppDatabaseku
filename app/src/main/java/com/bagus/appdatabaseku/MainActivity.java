@@ -14,6 +14,7 @@ import com.bagus.appdatabaseku.adapter.AdapterKu;
 import com.bagus.appdatabaseku.databaseku.MyDatabaseKu;
 import com.bagus.appdatabaseku.modal.ModalKu;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
@@ -57,5 +58,21 @@ public class MainActivity extends AppCompatActivity {
 
             }
         });
+
+        gm = new GridLayoutManager(this,1);
+        recycler_view .setLayoutManager(gm);
+
+        modalListAll = new ArrayList<>();
+        modalList = dbku.tampilkanSemuaUser();
+
+        for (ModalKu m : modalList){
+            ModalKu listKu = new ModalKu();
+
+            listKu.setName(m.getName());
+            listKu.setAlamat(m.getAlamat());
+            listKu.setPekerjaan(m.getPekerjaan());
+
+            modalListAll.add(listKu);
+        }
     }
 }
