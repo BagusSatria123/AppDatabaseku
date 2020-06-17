@@ -21,10 +21,10 @@ public class MyDatabaseKu extends SQLiteOpenHelper {
 
     //DATABASE TABLE AND FIELD
     static String DATABASE_TABLE = "table_app";
-    static String DB_ID = "app_id ";
-    static String DB_NAME = "app_name ";
-    static String DB_ALAMAT = "app_alamat ";
-    static String DB_PEKERJAAN = "app_pekerjaan ";
+    static String DB_ID = "app_id";
+    static String DB_NAME = "app_name";
+    static String DB_ALAMAT = "app_alamat";
+    static String DB_PEKERJAAN = "app_pekerjaan";
 
     static String CREATE_TABLE = " CREATE TABLE " + DATABASE_TABLE + " ( " +  DB_ID  + " INTEGER PRIMARY KEY, "
             + DB_NAME + " TEXT, "
